@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/models/AssignmentRepository.js" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/models/FacultyRepository.js" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/models/LecturesRepository.js" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/models/ModuleRepository.js" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/models/ProgramRepository.js" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/models/QuizRepository.js" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/models/StaffRepository.js" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/models/StudentRepository.js" dialect="SQLite" />
+  </component>
+</project>

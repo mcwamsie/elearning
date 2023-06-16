@@ -1,0 +1,74 @@
+
+{
+                                                            mcq && <button
+                                                                type="button"
+                                                                className="btn btn-danger text-white ms-auto"
+                                                                onClick={() => {
+
+                                                                    let oldValue = question
+                                                                    oldValue.answers.push({
+                                                                        answerText: "",
+                                                                        correct: false
+                                                                    })
+                                                                    //setValue(`questions[${index}].answers`, q_answer)
+                                                                    //setError(`questions[${index}].answers`, [])
+                                                                    questionFieldArray.update(index, oldValue)
+
+                                                                }}
+                                                            >
+                                                                <i className="fas fa-times"/>
+                                                                <span style={{marginLeft: 3}}>Add Answer</span>
+                                                            </button>
+                                                        }
+
+{
+                                                        mcq && <>
+
+                                                        <h6 className="mb-4 fw-bold mb-3 text-center">Answers</h6>
+                                                            { errors.questions?.[index]?.answers &&
+                                                                <div className="invalid-feedback">{errors.questions?.[index]?.answers.message}</div>
+                                                            }
+
+                                                    {
+                                                        question.answers.map((answer, i) => {
+                                                            console.log(errors)
+                                                            return (
+                                                                <div className="col-md-6" key={i}>
+                                                                    <div
+                                                                        className="form-group mb-4 mt-2">
+                                                                        <label htmlFor="module"
+                                                                               className="col-md-12 p-0 fw-bold">
+                                                                            Answer {i + 1}:
+                                                                        </label>
+                                                                        <div className={"row"}>
+                                                                          <div className="col">
+                                                                              <div
+                                                                            className={`col-12 border-bottom p-0 ${errors.questions?.[index]?.answers[i]?.answerText ? 'is-invalid' : ''}`}>
+                                                                            <input
+                                                                                className={'form-control  p-0 border-0'}
+                                                                                name={`questions[${index}].answers[${i}].answerText`}
+                                                                                {...register(`questions[${index}].answers[${i}].answerText`)}
+                                                                            />
+
+                                                                        </div>
+                                                                        <div className="invalid-feedback">{errors.questions?.[index]?.answers[i]?.answerText.message}</div>
+
+                                                                          </div>
+                                                                            <div className="col-auto">
+                                                                                 <label>
+                                                                                <input
+                                                                                    {...register(`questions[${index}].answers[${i}].correct`)}
+                                                                                    name={`questions[${index}].answers[${i}].correct`}
+                                                                                    type="checkbox"
+                                                                                />
+                                                                                Correct
+                                                                            </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        </div>
+                                                                </div>
+                                                            )
+                                                        })
+                                                    }
+                                                        </>
+                                                    }
